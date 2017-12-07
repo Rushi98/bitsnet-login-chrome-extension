@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+
+  "name": "BITS Internet Login",
+  "description": "Login to BPGC Internet",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "*://10.1.0.10:*/*",
+    "*://*.msftconnecttest.com/*",
+    "*://*.msn.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://10.1.0.10:*/*"],
+      "js": ["login.js"]
+    },
+    {
+      "matches": ["*://*.msftconnecttest.com/*"],
+      "js": ["redirect.js"]
+    },
+    {
+      "matches": ["*://*.msn.com/*"],
+      "js": ["kill-msn.js"]
+    }
+  ]
+}
