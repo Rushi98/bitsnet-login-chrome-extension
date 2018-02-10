@@ -15,9 +15,15 @@
     "tabs",
     "*://10.1.0.10:*/*",
     "*://*.msftconnecttest.com/*",
-    "*://*.msn.com/*"
+    "*://*.msn.com/*",
+    "*://photon.bits-goa.ac.in/lms/login/*",
+    "*://pib.nic.in/*"
   ],
   "content_scripts": [
+  {
+    "matches": ["*://pib.nic.in/*"],
+    "js": ["pib.js"]
+  },
     {
       "matches": ["*://10.1.0.10:*/*"],
       "js": ["login.js"]
@@ -29,6 +35,10 @@
     {
       "matches": ["*://*.msn.com/*"],
       "js": ["kill-msn.js"]
+    },
+    {
+      "matches": ["*://photon.bits-goa.ac.in/lms/login/*"],
+      "js": ["moodle-login.js"]
     }
   ]
 }
