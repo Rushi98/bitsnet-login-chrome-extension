@@ -17,7 +17,8 @@
     "*://*.msftconnecttest.com/*",
     "*://*.msn.com/*",
     "*://photon.bits-goa.ac.in/lms/login/*",
-    "*://pib.nic.in/*"
+    "*://pib.nic.in/*",
+    "*://campnet.bits-goa.ac.in:*/*"
   ],
   "content_scripts": [
   {
@@ -25,7 +26,7 @@
     "js": ["pib.js"]
   },
     {
-      "matches": ["*://10.1.0.10:*/*"],
+      "matches": ["*://10.1.0.10:*/*", "*://campnet.bits-goa.ac.in:*/*"],
       "js": ["login.js"]
     },
     {
